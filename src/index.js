@@ -51,6 +51,7 @@ app.listen(3000, async () => {
   // tweet.comments.push(comment2);
   // await tweet.save();
   // console.log(tweet);  
-  const tweet= await tweetRepository.getAll(0,10);
-  console.log(tweet[0].contentByUser);
+  const tweet=await tweetRepository.create({content:"random",user:"new"});
+  console.log(tweet);
+  // console.log(tweet[0].contentByUser);
 });
