@@ -1,7 +1,4 @@
-const mongoose =require('mongoose');
-
-const connect = async ()=>{
+import mongoose from "mongoose";
+export const connect = async ()=>{
     await mongoose.connect("mongodb://localhost:27017/twitter");
 }
-
-module.exports= connect;

@@ -1,17 +1,17 @@
-const express = require("express");
-const connect = require("./config/database");
+import express from "express";
+import { connect } from "./config/database.js";
 const app = express();
 
-const {TweetRepository,HashtagRepository}=require('./repository/index');
-const TweetSevice = require("./services/tweet-service");
+import service from "./services/tweet-service.js";
 
 app.listen(3000, async () => {
   console.log("listening on port 3000");
-  await connect();
-  console.log("connected to database");
-
-  let service = new TweetSevice();
-  const tweet=await service.create({content:'#Hello #world #coding #newJob is fun'});
-
+  await connect();  
+  console.log("connected to database"); 
   
+  let ser= new service();
+
+  await ser.create({content:"done with #refactor "})
+
+
 });
