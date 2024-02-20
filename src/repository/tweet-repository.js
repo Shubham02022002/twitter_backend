@@ -1,5 +1,4 @@
 const Tweet =require('../models/tweet');
-// const Comment =require('../models/comment');
 class TweetRepository{
     async create(data){                 
         try {
@@ -18,15 +17,7 @@ class TweetRepository{
             console.log(error);
         }
     }
-
-    async update(id, data) {
-        try {
-            const tweet = await Tweet.findByIdAndUpdate(id, data, { new: true });
-            return tweet;
-        } catch (error) {
-            console.log(error);
-        }
-    }    
+    
     async getById(id){
         try {
             const tweet = await Tweet.findById(id);
@@ -54,16 +45,6 @@ class TweetRepository{
         }
     } 
     
-    // async comment(id,data){
-    //     try {
-    //         const tweet = await Comment.findById(id);
-    //         tweet.comments.push(data);
-    //         await tweet.save();
-    //         return tweet;
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
     
 }
 

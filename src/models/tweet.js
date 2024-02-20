@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Comment = require("./comment");
 const tweetSchema = new mongoose.Schema(
   {
     content: {
@@ -12,7 +11,7 @@ const tweetSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref: "HashTag",
       },
-    ],
+    ], 
   },
   {
     timestamps: true,
