@@ -36,9 +36,9 @@ class TweetRepository{
         }
     }
 
-    async getAll(){
+    async getAll(offset,limit){
         try {
-            const tweet = await Tweet.find();
+            const tweet = await Tweet.find().skip(offset).limit(limit);
             return tweet;
         } catch (error) {
             console.log(error);

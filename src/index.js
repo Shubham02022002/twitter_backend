@@ -33,22 +33,24 @@ app.listen(3000, async () => {
   
 // const tweet = await tweetRepository.getWithComment('65d36413df8add17c3fb9a2b');
 
-  const tweet = await tweetRepository.create({
-    content: "new tweet content",
-    user: "userX",
-  });
+  // const tweet = await tweetRepository.create({
+  //   content: "new tweet content",
+  //   user: "userX",
+  // });
   
-  const comment = await Comment.create({
-    content: "this is a comment",
-    user: "dev",
-  });
+  // const comment = await Comment.create({
+  //   content: "this is a comment",
+  //   user: "dev",
+  // });
 
-  const comment2=await Comment.create({
-    content:"this is the second comment",
-    user:"dev2"
-  })
-  tweet.comments.push(comment);
-  tweet.comments.push(comment2);
-  await tweet.save();
-  console.log(tweet);  
+  // const comment2=await Comment.create({
+  //   content:"this is the second comment",
+  //   user:"dev2"
+  // })
+  // tweet.comments.push(comment);
+  // tweet.comments.push(comment2);
+  // await tweet.save();
+  // console.log(tweet);  
+  const tweet= await tweetRepository.getAll(0,10);
+  console.log(tweet[0].contentByUser);
 });
