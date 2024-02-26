@@ -1,5 +1,5 @@
 import HashTag from "../models/hashtags.js";
-class HashtagReposiotry{
+class HashtagRepository{
     async create(data){                 
         try {
             const tag = await HashTag.create(data);
@@ -48,4 +48,4 @@ class HashtagReposiotry{
     
 }
 
-export default HashtagReposiotry;
+export default HashtagRepository;
